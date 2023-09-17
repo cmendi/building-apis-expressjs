@@ -33,7 +33,7 @@
 
 			<!--Chirp Div-->
 			<div id="chirps">
-				<div class="col-12 p-4 shadow rounded border border-black">
+				<!-- <div class="col-12 p-4 shadow rounded border border-black">
 					<div class="d-flex justify-content-end">
 						<button id="chirpDelete" class="btn-close position-absolute"></button>
 					</div>
@@ -42,7 +42,7 @@
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sapiente corporis laudantium modi excepturi vel non mollitia sit, sint voluptatum? Dolore, nam vel veritatis dolor asperiores
 						soluta eveniet quo fuga?
 					</p>
-				</div>
+				</div> -->
 			</div>
 		</div>
 
@@ -51,10 +51,17 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+						<h1 class="modal-title fs-5" id="exampleModalLabel">Edit Chirp</h1>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<div class="modal-body">...</div>
+					<div class="modal-body">
+						<form>
+							<div class="mb-3">
+								<label class="form-label">Edit Message:</label>
+								<textarea id="text" class="form-control" id="modalText" required></textarea>
+							</div>
+						</form>
+					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 						<button type="button" class="btn btn-primary">Save changes</button>
@@ -71,5 +78,6 @@
 			crossorigin="anonymous"
 		></script>
 		<script src="./app.js"></script>
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Launch demo modal</button>
 	</body>
 </html>
