@@ -44,7 +44,7 @@ function createChirp() {
 		},
 	});
 }
-
+// Update chirp
 function updateChirp() {
 	chirpId = $(this).data("id");
 	// Keep the same username when updating chirp.
