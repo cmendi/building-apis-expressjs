@@ -2,6 +2,7 @@ const chirpDiv = $("#chirps");
 let chirpId;
 let chirpUserName;
 
+// Fetch data
 $.ajax({
 	url: "/api/chirps/",
 	type: "GET",
@@ -20,11 +21,14 @@ $.ajax({
 			}
 		});
 	},
+
+	// No idea what xhr or textStatus do. I just found out how to use $.ajax on stack overflow.
 	error: function (xhr, textStatus, error) {
 		console.error(error);
 	},
 });
 
+// Create chirp
 function createChirp() {
 	let name = $("#name").val();
 	let message = $("#text").val();
@@ -42,13 +46,16 @@ function createChirp() {
 
 function updateChirp() {
 	chirpId = $(this).data("id");
+	// Keep the same username when updating chirp.
 	chirpUserName = $(`[data-id='${chirpId}'] h3`).text();
 	$("#modalUserName").val(chirpUserName);
+	// Show modal when chirp div is clicked.
 	$("#myModal").modal("show");
 	const chirpMessage = $(`[data-id='${chirpId}'] p`).text();
 	$("#modalText").val(chirpMessage);
 }
 
+// Save the user's name but update the message the user edits.
 function saveUpdateChirp() {
 	const updateMessage = $("#modalText").val();
 	const updateUserName = $("#modalUserName").val();
@@ -66,6 +73,7 @@ function saveUpdateChirp() {
 	});
 }
 
+// Delete chirp
 function deleteChirp() {
 	const id = $(this).attr("data-id");
 	$.ajax({
