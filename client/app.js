@@ -8,6 +8,7 @@ $.ajax({
 	type: "GET",
 	success: function (data) {
 		Object.keys(data).forEach((id) => {
+			// This took me a long time to find. I didnt want the undefined data to show but i did it lol.
 			if (data[id].name !== undefined || data[id].text !== undefined) {
 				let user = data[id].name;
 				let message = data[id].text;
