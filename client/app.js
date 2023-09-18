@@ -42,6 +42,9 @@ function createChirp() {
 		success: () => {
 			location.href = "/";
 		},
+		error: function (xhr, textStatus, error) {
+			console.error(error);
+		},
 	});
 }
 // Update chirp
@@ -82,6 +85,9 @@ function deleteChirp() {
 		type: "DELETE",
 		success: () => {
 			location.href = "/";
+		},
+		error: function (xhr, textStatus, error) {
+			console.error(error);
 		},
 	});
 }
