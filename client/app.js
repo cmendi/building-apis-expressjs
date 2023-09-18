@@ -23,7 +23,7 @@ $.ajax({
 		});
 	},
 
-	// No idea what xhr or textStatus do. I just found out how to use $.ajax on stack overflow.
+	// No idea what xhr or textStatus does. I just found out how to use $.ajax on stack overflow.
 	error: function (xhr, textStatus, error) {
 		console.error(error);
 	},
