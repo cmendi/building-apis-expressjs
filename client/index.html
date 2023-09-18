@@ -26,24 +26,13 @@
 							<label class="form-label">Message</label>
 							<textarea id="text" class="form-control" id="inputText" required></textarea>
 						</div>
-						<button id="btnSubmit" type="submit" class="btn btn-primary">Submit</button>
+						<button id="btnSubmit" onclick="createChirp()" class="btn btn-primary">Submit</button>
 					</form>
 				</div>
 			</div>
 
-			<!--Chirp Div-->
-			<div id="chirps">
-				<!-- <div class="col-12 p-4 shadow rounded border border-black">
-					<div class="d-flex justify-content-end">
-						<button id="chirpDelete" class="btn-close position-absolute"></button>
-					</div>
-					<h3>Chris Mendenhall</h3>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sapiente corporis laudantium modi excepturi vel non mollitia sit, sint voluptatum? Dolore, nam vel veritatis dolor asperiores
-						soluta eveniet quo fuga?
-					</p>
-				</div> -->
-			</div>
+			<!--Chirps-->
+			<div id="chirps" class="d-flex flex-column"></div>
 		</div>
 
 		<!-- Modal -->
@@ -57,14 +46,15 @@
 					<div class="modal-body">
 						<form>
 							<div class="mb-3">
+								<input type="hidden" id="modalUserName" value="" />
 								<label class="form-label">Edit Message:</label>
-								<textarea id="text" class="form-control" id="modalText" required></textarea>
+								<textarea class="form-control" id="modalText" required></textarea>
 							</div>
 						</form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<button onclick="saveUpdateChirp()" type="button" class="btn btn-primary">Save changes</button>
 					</div>
 				</div>
 			</div>
@@ -78,6 +68,6 @@
 			crossorigin="anonymous"
 		></script>
 		<script src="./app.js"></script>
-		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Launch demo modal</button>
+		<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Launch demo modal</button> -->
 	</body>
 </html>
